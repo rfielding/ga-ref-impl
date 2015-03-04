@@ -29,14 +29,14 @@ package net.geometricalgebra.subspace.basis;
  * @author  fontijne
  */
 public interface InnerProductTypes {
-    public final static int LEFT_CONTRACTION = 1;
-    public final static int RIGHT_CONTRACTION = 2;
-    public final static int HESTENES_INNER_PRODUCT = 3;
-    public final static int MODIFIED_HESTENES_INNER_PRODUCT = 4;
+	public final static int LEFT_CONTRACTION = 1;
+	public final static int RIGHT_CONTRACTION = 2;
+	public final static int HESTENES_INNER_PRODUCT = 3;
+	public final static int MODIFIED_HESTENES_INNER_PRODUCT = 4;
 
-    public final static int LC = LEFT_CONTRACTION;
-    public final static int RC = RIGHT_CONTRACTION;
-    public final static int HIP = HESTENES_INNER_PRODUCT;
-    public final static int MHIP = MODIFIED_HESTENES_INNER_PRODUCT;
+	public final static int LC = LEFT_CONTRACTION;
+	public final static int RC = RIGHT_CONTRACTION;
+	public final static int HIP = HESTENES_INNER_PRODUCT;
+	public final static int MHIP = MODIFIED_HESTENES_INNER_PRODUCT;
 
 }

@@ -30,23 +30,23 @@ package net.geometricalgebra.subspace.util;
  */
 public final class DoubleU {
 
-    /** Creates a new instance of DoubleU */
-    public DoubleU() {
-    }
+	/** Creates a new instance of DoubleU */
+	public DoubleU() {
+	}
 
-    public static void main(String[] args) {
-	double []a = new double[]{1.0001, 1.49, 2.02, -0.51, -10000.1};
-	for (int i = 0; i < a.length; i++)
-	    System.out.println(a[i] + " -> " + round(a[i], 0.07, 0.07));
-    }
+	public static void main(String[] args) {
+		double[] a = new double[]{1.0001, 1.49, 2.02, -0.51, -10000.1};
+		for (int i = 0; i < a.length; i++)
+			System.out.println(a[i] + " -> " + round(a[i], 0.07, 0.07));
+	}
 
-    /**
-     * Rounds <code>what</code> to the nearest multiple X of <code>multipleOf</code>,
-     * if |X - what| <= epsilon
-     */
-    public static double round(double what, double multipleOf, double epsilon) {
-	double a = what / multipleOf;
-	double b = Math.round(a) * multipleOf;
-	return (Math.abs((what - b)) <= epsilon) ? b : what;
-    }
+	/**
+	 * Rounds <code>what</code> to the nearest multiple X of <code>multipleOf</code>,
+	 * if |X - what| <= epsilon
+	 */
+	public static double round(double what, double multipleOf, double epsilon) {
+		double a = what / multipleOf;
+		double b = Math.round(a) * multipleOf;
+		return (Math.abs((what - b)) <= epsilon) ? b : what;
+	}
 }

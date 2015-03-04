@@ -29,19 +29,18 @@ package net.geometricalgebra.subspace.metric;
  * @author  fontijne
  */
 public class MetricException extends java.lang.Exception {
-    
-    /**
-     * Creates a new instance of <code>MetricException</code> without detail message.
-     */
-    public MetricException() {
-    }
-    
-    
-    /**
-     * Constructs an instance of <code>MetricException</code> with the specified detail message.
-     * @param msg the detail message.
-     */
-    public MetricException(String msg) {
-	super(msg);
-    }
+
+	/**
+	 * Creates a new instance of <code>MetricException</code> without detail message.
+	 */
+	public MetricException() {
+	}
+
+	/**
+	 * Constructs an instance of <code>MetricException</code> with the specified detail message.
+	 * @param msg the detail message.
+	 */
+	public MetricException(String msg) {
+		super(msg);
+	}
 }

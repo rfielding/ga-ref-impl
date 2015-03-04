@@ -26,14 +26,16 @@
         <groupId>com.googlecode.maven-java-formatter-plugin</groupId>
         <artifactId>maven-java-formatter-plugin</artifactId>
         <version>0.3.1</version>
-        <configuration>
+	<configuration>
+          <!-- examples for include and exclude
           <includes>
             <include>com/relativitas/maven/plugins/formatter/</include>
           </includes>
           <excludes>
             <exclude>com/relativitas/maven/plugins/formatter/special/</exclude>
             <exclude>**/*Test.java</exclude>
-          </excludes>
+	  </excludes>
+          -->
         </configuration>
       </plugin>
     </plugins>

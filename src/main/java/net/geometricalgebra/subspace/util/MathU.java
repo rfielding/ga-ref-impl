@@ -31,26 +31,26 @@ package net.geometricalgebra.subspace.util;
  */
 public class MathU {
 
-    /** Creates a new instance of Math */
-    public MathU() {
-    }
+	/** Creates a new instance of Math */
+	public MathU() {
+	}
 
-    /**
-    * @return the hyperbolic cosine of @param x
-    *
-    * Computed as 0.5 (e^x + e^-x)
-    */
-    public static double cosh(double x) {
-	return 0.5 * (java.lang.Math.exp(x) + java.lang.Math.exp(-x));
-    }
+	/**
+	 * @return the hyperbolic cosine of @param x
+	 *
+	 * Computed as 0.5 (e^x + e^-x)
+	 */
+	public static double cosh(double x) {
+		return 0.5 * (java.lang.Math.exp(x) + java.lang.Math.exp(-x));
+	}
 
-    /**
-     * @return the hyperbolic cosine of @param x
-     *
-     * Computed as 0.5 (e^x - e^-x)
-     */
-    public static double sinh(double x) {
-	return 0.5 * (java.lang.Math.exp(x) - java.lang.Math.exp(-x));
-    }
+	/**
+	 * @return the hyperbolic cosine of @param x
+	 *
+	 * Computed as 0.5 (e^x - e^-x)
+	 */
+	public static double sinh(double x) {
+		return 0.5 * (java.lang.Math.exp(x) - java.lang.Math.exp(-x));
+	}
 
 }

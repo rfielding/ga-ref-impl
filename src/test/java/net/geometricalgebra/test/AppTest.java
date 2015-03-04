@@ -29,30 +29,26 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 public class AppTest extends TestCase {
-    public AppTest(String testName) {
-        super( testName );
-    }
+	public AppTest(String testName) {
+		super(testName);
+	}
 
-    public static Test suite()
-    {
-	    return new TestSuite( AppTest.class );
-    }
+	public static Test suite() {
+		return new TestSuite(AppTest.class);
+	}
 
-    public static void testApp() {
+	public static void testApp() {
 		// setup conformal algebra:
 		String[] bvNames = {"no", "e1", "e2", "e3", "ni"};
-		double[][] m = new double[][]{
-			{0.0, 0.0, 0.0, 0.0, -1.0},
-			{0.0, 1.0, 0.0, 0.0, 0.0},
-			{0.0, 0.0, 1.0, 0.0, 0.0},
-			{0.0, 0.0, 0.0 ,1.0, 0.0},
-			{-1.0, 0.0, 0.0 , 0.0, 0.0}
-		};
+		double[][] m = new double[][]{{0.0, 0.0, 0.0, 0.0, -1.0},
+				{0.0, 1.0, 0.0, 0.0, 0.0}, {0.0, 0.0, 1.0, 0.0, 0.0},
+				{0.0, 0.0, 0.0, 1.0, 0.0}, {-1.0, 0.0, 0.0, 0.0, 0.0}};
 
 		Metric M = null;
 		try {
 			M = new Metric(m);
-		} catch (Exception ex) {}
+		} catch (Exception ex) {
+		}
 
 		// get basis vectors
 		Multivector no = Multivector.getBasisVector(0);
@@ -61,27 +57,25 @@ public class AppTest extends TestCase {
 		Multivector e3 = Multivector.getBasisVector(3);
 		Multivector ni = Multivector.getBasisVector(4);
 
-
-		{   // do simple test with outer product and addition (subspace.basis.Multivector.java)
+		{ // do simple test with outer product and addition (subspace.basis.Multivector.java)
 			Multivector A = e1.add(e2.op(e3).op(e1));
-//			System.out.println("A = " + A.toString(bvNames));
-//			System.out.println(new MultivectorType(A));
+			//			System.out.println("A = " + A.toString(bvNames));
+			//			System.out.println(new MultivectorType(A));
 		}
 
-
-		{   // test meet & join (subspace.basis.MeetJoin.java)
+		{ // test meet & join (subspace.basis.MeetJoin.java)
 			Multivector A = e2.op(e3).op(e1);
 			Multivector B = e2.op(no);
-		    MeetJoin MJ = new MeetJoin(A, B);
+			MeetJoin MJ = new MeetJoin(A, B);
 		}
 
-		{   // test factorization (subspace.basis.Util.java)
+		{ // test factorization (subspace.basis.Util.java)
 			Multivector A = e2.op(e3).op(e1);
 			double[] scale = new double[1];
-    		Multivector[] F = Util.factorizeBlade(A, scale);
+			Multivector[] F = Util.factorizeBlade(A, scale);
 		}
 
-		{	// InnerProductTypes.java
+		{ // InnerProductTypes.java
 			int i = InnerProductTypes.LEFT_CONTRACTION;
 		}
 	}
