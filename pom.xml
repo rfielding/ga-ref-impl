@@ -20,4 +20,22 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.googlecode.maven-java-formatter-plugin</groupId>
+        <artifactId>maven-java-formatter-plugin</artifactId>
+        <version>0.3.1</version>
+        <configuration>
+          <includes>
+            <include>com/relativitas/maven/plugins/formatter/</include>
+          </includes>
+          <excludes>
+            <exclude>com/relativitas/maven/plugins/formatter/special/</exclude>
+            <exclude>**/*Test.java</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
