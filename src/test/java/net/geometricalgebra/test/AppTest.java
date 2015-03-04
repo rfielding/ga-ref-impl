@@ -24,12 +24,21 @@
 package net.geometricalgebra.test;
 
 import net.geometricalgebra.subspace.basis.*;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
-public class test {
-    public test() {
+public class AppTest extends TestCase {
+    public AppTest(String testName) {
+        super( testName );
     }
 
-    public static void main(String[] args) {
+    public static Test suite()
+    {
+	    return new TestSuite( AppTest.class );
+    }
+
+    public static void testApp() {
 		// setup conformal algebra:
 		String[] bvNames = {"no", "e1", "e2", "e3", "ni"};
 		double[][] m = new double[][]{
