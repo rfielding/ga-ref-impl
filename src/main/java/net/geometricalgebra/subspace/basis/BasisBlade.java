@@ -26,6 +26,8 @@
 package net.geometricalgebra.subspace.basis;
 
 import java.util.ArrayList;
+import net.geometricalgebra.subspace.util.*;
+import net.geometricalgebra.subspace.metric.*;
 
 /**
  * A simple class to represent a basis blade.
@@ -75,7 +77,7 @@ final public class BasisBlade implements Cloneable, InnerProductTypes {
 			}
 
 			System.out.println("time: " + (System.currentTimeMillis() - t));*/
-		} catch (subspace.metric.MetricException E) {
+		} catch (MetricException E) {
 			System.out.println("Exception: " + E);
 		}
 
@@ -116,7 +118,7 @@ final public class BasisBlade implements Cloneable, InnerProductTypes {
 		a >>= 1;
 		int sum = 0;
 		while (a != 0) {
-			sum += subspace.util.Bits.bitCount(a & b);
+			sum += Bits.bitCount(a & b);
 			a >>= 1;
 		}
 
@@ -296,7 +298,7 @@ final public class BasisBlade implements Cloneable, InnerProductTypes {
 
     /** returns the grade of this blade */
     public int grade() {
-		return subspace.util.Bits.bitCount(bitmap);
+		return Bits.bitCount(bitmap);
     }
 
     // *!*HTML_TAG*!* minus_one_pow
@@ -432,7 +434,7 @@ final public class BasisBlade implements Cloneable, InnerProductTypes {
      * @returns a new basis blade if a change is required.
      */
     public BasisBlade round(double multipleOf, double epsilon) {
-		double a = subspace.util.DoubleU.round(scale, multipleOf, epsilon);
+		double a = DoubleU.round(scale, multipleOf, epsilon);
 		if (a != scale)
 			return new BasisBlade(bitmap, a);
 		else return this;

@@ -25,6 +25,7 @@
 package net.geometricalgebra.subspace.basis;
 
 import java.util.*;
+import net.geometricalgebra.subspace.util.*;
 
 /**
  * This class implements a sample multivector class along with
@@ -145,7 +146,7 @@ public class Multivector implements Cloneable, InnerProductTypes {
 
     /** do not modify 'B' for it is not copied */
     public Multivector(BasisBlade B) {
-		blades = subspace.util.ArrayListU.newArrayList(B);
+		blades = ArrayListU.newArrayList(B);
     }
 
     public Multivector copy() {
@@ -474,7 +475,7 @@ public class Multivector implements Cloneable, InnerProductTypes {
 			//hey: todo what if a2 == 0?
 			else {
 				double alpha = Math.sqrt(a2);
-				return gp(subspace.util.MathU.sinh(alpha) / alpha).add(subspace.util.MathU.cosh(alpha));
+				return gp(MathU.sinh(alpha) / alpha).add(MathU.cosh(alpha));
 			}
 		}
 		else return expSeries(M, order);
@@ -541,7 +542,7 @@ public class Multivector implements Cloneable, InnerProductTypes {
 			// special case A^2 = +-alpha^2
 			if (a2 < 0) {
 				double alpha = Math.sqrt(-a2);
-				return gp(subspace.util.MathU.sinh(alpha) / alpha);
+				return gp(MathU.sinh(alpha) / alpha);
 			}
 			//hey: todo what if a2 == 0?
 			else {
@@ -601,7 +602,7 @@ public class Multivector implements Cloneable, InnerProductTypes {
 			// special case A^2 = +-alpha^2
 			if (a2 < 0) {
 				double alpha = Math.sqrt(-a2);
-				return new Multivector(subspace.util.MathU.cosh(alpha));
+				return new Multivector(MathU.cosh(alpha));
 			}
 			//hey: todo what if a2 == 0?
 			else {
@@ -996,7 +997,7 @@ public class Multivector implements Cloneable, InnerProductTypes {
 		int maxD = 0;
 		for (int i = 0; i < blades.size(); i++) {
 			BasisBlade b = (BasisBlade)blades.get(i);
-			maxD = Math.max(subspace.util.Bits.highestOneBit(b.bitmap), maxD);
+			maxD = Math.max(Bits.highestOneBit(b.bitmap), maxD);
 		}
 		return maxD+1;
     }

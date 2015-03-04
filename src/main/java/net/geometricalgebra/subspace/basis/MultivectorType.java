@@ -23,6 +23,7 @@
  */
 
 package net.geometricalgebra.subspace.basis;
+import net.geometricalgebra.subspace.util.*;
 
 /**
  * A class that computes whether a multivector is a blade or a versor,
@@ -155,7 +156,7 @@ public class MultivectorType {
 	}
 
 	// if homogeneous: blade
-	if (subspace.util.Bits.bitCount(gradeUsage) == 1)
+	if (Bits.bitCount(gradeUsage) == 1)
 	    type = BLADE;
 	else type = VERSOR;
     }

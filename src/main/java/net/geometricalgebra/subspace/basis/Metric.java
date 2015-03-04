@@ -27,6 +27,7 @@ package net.geometricalgebra.subspace.basis;
 import java.util.ArrayList;
 import cern.colt.matrix.*;
 import cern.colt.matrix.linalg.*;
+import net.geometricalgebra.subspace.metric.*;
 
 /**
  * A class for representing totally arbitrary metric. Metric is given
@@ -36,7 +37,7 @@ import cern.colt.matrix.linalg.*;
  *
  * @author  fontijne
  */
-public class Metric implements subspace.metric.Metric {
+public class Metric implements MetricI {
     public static void main(String args[]) {
         double[][] m = new double[][]{
             {1.0, 0.0, 0.0},
@@ -46,22 +47,22 @@ public class Metric implements subspace.metric.Metric {
 
         try {
             Metric M = new Metric(m);
-        } catch (subspace.metric.MetricException E) {
+        } catch (MetricException E) {
         }
 
     }
 
     /** Creates a new instance of Metric */
-    public Metric(double[][] m) throws subspace.metric.MetricException {
+    public Metric(double[][] m) throws MetricException {
         this(DoubleFactory2D.dense.make(m));
     }
 
     // *!*HTML_TAG*!* arbitrary_metric_constructor
     /** Creates a new instance of Metric */
-    public Metric(DoubleMatrix2D m) throws subspace.metric.MetricException {
+    public Metric(DoubleMatrix2D m) throws MetricException {
         m_matrix = m.copy();
         if (!Property.ZERO.isSymmetric(m_matrix))
-            throw new subspace.metric.MetricException("The metric matrix must be symmetric");
+            throw new MetricException("The metric matrix must be symmetric");
 
         // compute eigen value decomposition
         m_eig = new EigenvalueDecomposition(m_matrix);

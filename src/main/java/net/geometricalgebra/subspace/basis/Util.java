@@ -27,6 +27,7 @@ package net.geometricalgebra.subspace.basis;
 import java.util.*;
 import cern.colt.matrix.*;
 import cern.colt.matrix.linalg.*;
+import net.geometricalgebra.subspace.util.*;
 
 /**
  *
@@ -315,8 +316,8 @@ public class Util implements InnerProductTypes {
         // get largest basis blade, basis vectors
         BasisBlade E = B.largestBasisBlade();
         
-        int lowestBit = subspace.util.Bits.lowestOneBit(E.bitmap);
-        int highestBit = subspace.util.Bits.highestOneBit(E.bitmap);
+        int lowestBit = Bits.lowestOneBit(E.bitmap);
+        int highestBit = Bits.highestOneBit(E.bitmap);
         
         Multivector[] f = new Multivector[k];
         if (k == 1) {
